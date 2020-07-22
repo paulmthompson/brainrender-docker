@@ -12,6 +12,9 @@ To build, use the following code in the command line while in the brainrender-do
 sudo docker build -t brainrender:0.4.0.0 .
 ```
 
+Alternatively, you can grab a version from dockerhub: <br>
+https://hub.docker.com/repository/docker/paulmthompson/brainrender-docker
+
 ### Running
 
 You can run the image by using the following command:
