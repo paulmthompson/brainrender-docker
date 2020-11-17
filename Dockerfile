@@ -1,7 +1,7 @@
 
 FROM jupyter/base-notebook:python-3.7.6
 
-ARG BRAINRENDER_VERSION=0.4.0.0
+ARG BRAINRENDER_VERSION=1.1.1.0
 
 USER root
 
