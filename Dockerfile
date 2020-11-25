@@ -1,7 +1,7 @@
 
 FROM jupyter/base-notebook:python-3.7.6
 
-ARG BRAINRENDER_VERSION=1.1.1.0
+ARG BRAINRENDER_VERSION=2.0.0.1
 
 USER root
 
@@ -30,8 +30,10 @@ RUN env CPPFLAGS=-I/usr/include/hdf5/serial \
 
 # Install Python 3 packages
 RUN pip install install --user brainrender=="${BRAINRENDER_VERSION}" \
-    'panel==0.9.7' \
     && \
+    conda install -c conda-forge k3d && \
+    jupyter nbextension enable --py --sys-prefix k3d && \
+    jupyter nbextension install --py --sys-prefix k3d && \
     conda clean --all -f -y && \
     jupyter lab build -y && \
     jupyter lab clean -y && \
